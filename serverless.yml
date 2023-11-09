@@ -10,7 +10,6 @@ functions:
   hello:
     handler: src/handler.hello
     events:
-      - http: GET /
-        path: hello
-        cors:
-          origin: "*"
+      - http:
+        path: /hello
+        method: get
