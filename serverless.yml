@@ -1,0 +1,18 @@
+service: collection-hello-world
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  stage: dev
+
+functions:
+  hello:
+    handler: src/handler.hello
+    events:
+      - http:
+        path: /hello
+        method: get
+        cors:
+          origin: "*"
