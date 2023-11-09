@@ -10,6 +10,6 @@ functions:
   hello:
     handler: src/handler.hello
     events:
-      - http:
+     - http:
         path: /hello
         method: get
