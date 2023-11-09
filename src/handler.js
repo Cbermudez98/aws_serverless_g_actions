@@ -8,7 +8,7 @@ module.exports.hello = async (event) => {
     body: JSON.stringify(
       {
         message: generateNumber(),
-      },
+      }
     ),
   };
 };
