@@ -1,5 +1,4 @@
 'use strict';
-
 const { generateNumber } = require("./controller/randomNumber");
 
 module.exports.hello = async (event) => {
