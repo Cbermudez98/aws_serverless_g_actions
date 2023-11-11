@@ -1,7 +1,7 @@
 service: collection-hello-world
 
 plugins:
-  - serverless-webpack
+  - serverless-esbuild
 
 provider:
   name: aws
@@ -10,15 +10,16 @@ provider:
   stage: dev
 
 custom:
-  webpack:
-    webpackConfig: webpack.config.js
-    includeModules: false
-    packager: 'npm'
-    excludeFiles: src/**/*.test.js
+  esbuild:
+    bundle: true
+    minify: true
+
+package: 
+  individually: true
 
 functions:
   hello:
-    handler: dist/handler.hello
+    handler: src/handler.hello
     events:
      - http:
         path: /hello

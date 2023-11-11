@@ -24,9 +24,6 @@ jobs:
       
       - name: Install serverless
         run: npm install -g serverless
-
-      - name: Install webpack plugin
-        run: npx serverless plugin install -n serverless-webpack
       
       - name: serverless deploy
         uses: serverless/github-action@master
