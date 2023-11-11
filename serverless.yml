@@ -1,14 +1,21 @@
 service: collection-hello-world
 
+plugins:
+  - serverless-webpack
+
 provider:
   name: aws
   runtime: nodejs18.x
   region: us-east-1
   stage: dev
 
+custom:
+  webpack:
+    webpackConfig: webpack.config.js
+
 functions:
   hello:
-    handler: src/handler.hello
+    handler: dist/handler.hello
     events:
      - http:
         path: /hello
