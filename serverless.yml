@@ -12,6 +12,9 @@ provider:
 custom:
   webpack:
     webpackConfig: webpack.config.js
+    includeModules: false
+    packager: 'npm'
+    excludeFiles: src/**/*.test.js
 
 functions:
   hello:
